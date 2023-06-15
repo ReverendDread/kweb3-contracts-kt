@@ -1,5 +1,6 @@
 package dev.klepto.kweb3.contract.impl
 
+import dev.klepto.kweb3.Web3Response
 import dev.klepto.kweb3.abi.type.Address
 import dev.klepto.kweb3.abi.type.Bytes
 import dev.klepto.kweb3.abi.type.Uint
@@ -74,7 +75,7 @@ interface ERC721 : Contract {
      * @param data additional data with no specified format, sent in call to `to`
      */
     @Transaction
-    fun safeTransferFrom(from: Address, to: Address, tokenId: Uint, data: Bytes)
+    fun safeTransferFrom(from: Address, to: Address, tokenId: Uint, data: Bytes): Web3Response
 
     /**
      * Transfer ownership of an NFT
@@ -83,7 +84,7 @@ interface ERC721 : Contract {
      * @param tokenId the NFT to transfer
      */
     @Transaction
-    fun transferFrom(from: Address, to: Address, tokenId: Uint)
+    fun transferFrom(from: Address, to: Address, tokenId: Uint): Web3Response
 
     /**
      * Change or reaffirm the approved address for an NFT
@@ -91,7 +92,7 @@ interface ERC721 : Contract {
      * @param tokenId the NFT to approve
      */
     @Transaction
-    fun approve(approved: Address, tokenId: Uint)
+    fun approve(approved: Address, tokenId: Uint): Web3Response
 
     /**
      * Enable or disable approval for a third party ("operator") to manage all of caller's assets
@@ -99,7 +100,7 @@ interface ERC721 : Contract {
      * @param approved true if the operator is approved, false to revoke approval
      */
     @Transaction
-    fun setApprovalForAll(operator: Address, approved: Boolean)
+    fun setApprovalForAll(operator: Address, approved: Boolean): Web3Response
 
     /**
      * Get the approved address for a single NFT

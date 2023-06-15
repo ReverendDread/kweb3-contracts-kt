@@ -1,5 +1,6 @@
 package dev.klepto.kweb3.contract.impl
 
+import dev.klepto.kweb3.Web3Response
 import dev.klepto.kweb3.abi.type.Address
 import dev.klepto.kweb3.abi.type.Bytes
 import dev.klepto.kweb3.contract.Contract
@@ -26,7 +27,7 @@ object ERC2535 {
     interface DiamondInit : Contract {
 
         @Transaction
-        fun init()
+        fun init(): Web3Response
 
     }
 
@@ -37,7 +38,7 @@ object ERC2535 {
     interface DiamondMultiInit : Contract {
 
         @Transaction
-        fun multiInit(addresses: List<Address>, calldata: List<Bytes>)
+        fun multiInit(addresses: List<Address>, calldata: List<Bytes>): Web3Response
 
     }
 
@@ -82,7 +83,7 @@ object ERC2535 {
          * @param calldata a function call, including function selector and arguments, [calldata] is executed with delegatecall on [init]
          */
         @Transaction
-        fun diamondCut(cuts: List<IDiamond.FacetCut>, init: Address, calldata: Bytes)
+        fun diamondCut(cuts: List<IDiamond.FacetCut>, init: Address, calldata: Bytes): Web3Response
 
     }
 

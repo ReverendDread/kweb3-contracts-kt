@@ -1,7 +1,9 @@
 package dev.klepto.kweb3.contract.impl
 
+import dev.klepto.kweb3.Web3Response
 import dev.klepto.kweb3.abi.type.Address
 import dev.klepto.kweb3.contract.Contract
+import dev.klepto.kweb3.contract.Transaction
 
 /**
  * ERC-173 Contract Ownership Standard
@@ -22,7 +24,8 @@ interface ERC173 : Contract {
      * Set the address of the new owner ofthe contract
      * @param newOwner address of the new owner of the contract, setting to zero address will renounce any ownership
      */
-    fun transferOwnership(newOwner: Address)
+    @Transaction
+    fun transferOwnership(newOwner: Address) : Web3Response
 
     companion object {
         val INTERFACE_ID = "0x7f5828d0"

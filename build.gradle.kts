@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.klepto:kweb3:d52c74ba03")
+    api("com.github.klepto:kweb3:d52c74ba03")
 
     testImplementation(kotlin("test"))
 }

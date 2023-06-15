@@ -1,5 +1,6 @@
 package dev.klepto.kweb3.contract.impl
 
+import dev.klepto.kweb3.Web3Response
 import dev.klepto.kweb3.abi.type.Address
 import dev.klepto.kweb3.abi.type.Uint
 import dev.klepto.kweb3.contract.Contract
@@ -32,7 +33,7 @@ interface ERC5216 : Contract {
      * @param amount The amount of tokens to grant permission for.
      */
     @Transaction
-    fun approve(operator: Address, id: Uint, amount: Uint)
+    fun approve(operator: Address, id: Uint, amount: Uint): Web3Response
 
     /**
      * Gets the amount allocated to [operator] approved to transfer [account]'s tokens, according to [id].
